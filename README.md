@@ -4,6 +4,19 @@ A wellness web app for Yoga and Contrast Therapy bookings, member rewards and da
 
 **[Open the live demo](https://sync-wellness.vercel.app/)**
 
+## Latest update: member experience improvements
+
+Deployed on 7 November 2026 ([implementation commit](https://github.com/ikigaiwif606-acc/SYNC-APP/commit/c9ca1a049c14de674433cad95d9112dae73b3695)).
+
+- **More readable bookings:** supporting text is now 13–14px, with a direct “Book a session” heading.
+- **One clear overview action:** “Book a class” replaces two links to the same booking screen.
+- **Compact reward cards:** reward names, points costs and redemption actions come first; small service icons replace large decorative illustrations.
+- **Simpler headings:** redundant uppercase captions have been removed from member page introductions.
+- **Consistent styling:** shared color and surface tokens retain SYNC’s forest-green identity while reducing feature-specific overrides.
+- **Traditional Chinese support:** translations cover the updated labels.
+
+Verified demo booking and reward redemption, Traditional Chinese labels, and booking and rewards layouts at 320, 390, 768 and 1440px. This was a targeted usability update, not a complete accessibility audit.
+
 ## Features
 
 - **Book classes** — browse sessions, check availability and manage bookings.
