@@ -1,6 +1,54 @@
+/* Hallmark · checked: 2026-11-07 · genre: modern-minimal (inferred) · scope: app
+ * targeted review fixes; full-project Floor findings remain under audit
+ * built: the project · redesign: polish · v2.0.0 */
 /* Shared SYNC theme. Feature styles use these tokens; layouts stay with each feature. */
 :root{
   color-scheme:dark;
+  /* Shared surfaces, interaction states and QR contrast pairs. */
+  --sync-qr-ink:#000;
+  --sync-qr-paper:#fff;
+  --sync-nav-shadow:#0003;
+  --sync-dialog-shadow:#0008;
+  --sync-action-shadow:#030e0a30;
+  --sync-backdrop:#030e0ab3;
+  --sync-art-shadow:#070f0a33;
+  --sync-inset-surface:#0c231e40;
+  --sync-table-header:#0d231b70;
+  --sync-header-surface:#101f1bed;
+  --sync-bottom-nav:#13281ff0;
+  --sync-scrollbar-track:#152b22;
+  --sync-ended-surface:#172b24b3;
+  --sync-dialog-solid:#1b342c;
+  --sync-dialog-surface:#1b342cf5;
+  --sync-glass-solid:#1b352b;
+  --sync-toast-surface:#203c31;
+  --sync-ambient-blue:#305f70;
+  --sync-ticket-ink:#34412d;
+  --sync-service-ink:#3f604c;
+  --sync-ambient-sage:#54774b;
+  --sync-scrollbar-thumb:#667f64;
+  --sync-danger-hover:#895044;
+  --sync-chart-grid:#dbe8d010;
+  --sync-line-hover:#dbe8d073;
+  --sync-focus-halo:#e2edb709;
+  --sync-surface-hover:#e2edb723;
+  --sync-selection:#e2edb738;
+  --sync-ticket-paper:#e5d8b0;
+  --sync-nav-surface:#edf5e30a;
+  --sync-action-line:#edf8d369;
+  --sync-ticket-line:#f1e6bd;
+  --sync-danger-line:#ffc3b747;
+  --sync-on-danger:#fff3ed;
+  --sync-highlight-faint:#ffffff08;
+  --sync-highlight-panel:#ffffff09;
+  --sync-highlight-card:#ffffff0e;
+  --sync-highlight-nav:#ffffff10;
+  --sync-highlight-selected:#ffffff30;
+  --sync-highlight-action:#ffffff36;
+
+  --sync-font-body:"DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;
+  --sync-text-small:13px;
+  --sync-text-body:14px;
   --sync-bg:#101f1b;
   --sync-surface:#192f27;
   --sync-surface-raised:#20392f;
@@ -38,22 +86,22 @@
   --sync-gold-glass:radial-gradient(ellipse at 100% 0,#e5ce8a20,transparent 70%),linear-gradient(130deg,#4a49396b,#283c306b),#172a24cc;
   --ink:var(--sync-text);--blue:var(--sync-blue);--mint:var(--sync-sage);--lime:var(--sync-accent);--snow:var(--sync-text);--muted:var(--sync-muted);--line:var(--sync-line);
 }
-html{background:var(--sync-bg);scrollbar-color:#667f64 #152b22}
+html{background:var(--sync-bg);scrollbar-color:var(--sync-scrollbar-thumb) var(--sync-scrollbar-track)}
 /* Links use colour and focus outlines consistently, without text underlines. */
 :where(a,button,summary,label,[role="button"]),:where(a,button,summary,label,[role="button"]):is(:hover,:focus,:active,:visited){text-decoration:none!important}
 body{background:var(--sync-bg);color:var(--sync-text);isolation:isolate;position:relative;min-height:100svh}
-::selection{background:#e2edb738;color:var(--sync-text)}
+::selection{background:var(--sync-selection);color:var(--sync-text)}
 body:not(.auth-shell)>.ambient{position:fixed;z-index:-1;pointer-events:none;opacity:.34;filter:blur(50px);animation:none}
-body:not(.auth-shell)>.ambient-one{background:radial-gradient(ellipse,#54774b,transparent 70%);width:680px;height:680px;left:-260px;top:-250px}
-body:not(.auth-shell)>.ambient-two{background:radial-gradient(ellipse,#305f70,transparent 70%);width:680px;height:800px;right:-350px;top:300px}
+body:not(.auth-shell)>.ambient-one{background:radial-gradient(ellipse,var(--sync-ambient-sage),transparent 70%);width:680px;height:680px;left:-260px;top:-250px}
+body:not(.auth-shell)>.ambient-two{background:radial-gradient(ellipse,var(--sync-ambient-blue),transparent 70%);width:680px;height:800px;right:-350px;top:300px}
 body:not(.auth-shell) .brand img{filter:invert(93%) sepia(17%) saturate(373%) hue-rotate(25deg) brightness(107%)}
 body:not(.auth-shell) .brand:before,body:not(.auth-shell) .brand:after{display:none}
 body:not(.auth-shell) :is(.brand span,.location,footer){color:var(--sync-muted);border-color:var(--sync-line)}
-body:not(.auth-shell) .header nav{background:#edf5e30a;border:1px solid var(--sync-line);box-shadow:inset 0 1px 0 #ffffff10,var(--sync-shadow);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+body:not(.auth-shell) .header nav{background:var(--sync-nav-surface);border:1px solid var(--sync-line);box-shadow:inset 0 1px 0 var(--sync-highlight-nav),var(--sync-shadow);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 body:not(.auth-shell) .header nav a{color:var(--sync-muted)}
-body:not(.auth-shell) .header nav a.active{background:var(--sync-accent);color:var(--sync-on-accent);box-shadow:inset 0 1px 0 #ffffff30}
-body:not(.auth-shell) :is(.language-button,.avatar,.staff-account-trigger){background:#e2edb70a;border-color:var(--sync-line-strong);color:var(--sync-text);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-body:not(.auth-shell) :is(.staff-account-trigger:hover,.staff-account-trigger[aria-expanded=true]){background:var(--sync-accent-soft);box-shadow:0 0 0 3px #e2edb709}
+body:not(.auth-shell) .header nav a.active{background:var(--sync-accent);color:var(--sync-on-accent);box-shadow:inset 0 1px 0 var(--sync-highlight-selected)}
+body:not(.auth-shell) :is(.language-button,.avatar,.staff-account-trigger){background:var(--sync-surface-soft);border-color:var(--sync-line-strong);color:var(--sync-text);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+body:not(.auth-shell) :is(.staff-account-trigger:hover,.staff-account-trigger[aria-expanded=true]){background:var(--sync-accent-soft);box-shadow:0 0 0 3px var(--sync-focus-halo)}
 body:not(.auth-shell) :is(.eyebrow,.subtitle,.field,.inline-note,.modal-note,.modal-body,footer button){color:var(--sync-muted)}
 body:not(.auth-shell) :is(h1,h2,h3,h4,.page-title,.welcome h1,.staff-heading h1){color:var(--sync-text)}
 body:not(.auth-shell) .tabs button{background:var(--sync-accent-soft);color:var(--sync-muted);border-color:var(--sync-line-strong);border-radius:14px;min-height:44px}
@@ -61,21 +109,21 @@ body:not(.auth-shell) .tabs button.selected{background:var(--sync-accent);color:
 body:not(.auth-shell) :is(.staff-stats strong,.report-metric strong,.wallet-package-balance>strong,.mp-summary strong,.account-summary strong){color:var(--sync-text)}
 
 /* One action hierarchy, including controls inside feature cards and dialogs. */
-body:not(.auth-shell) .button{background:var(--sync-accent);border:1px solid #edf8d369;color:var(--sync-on-accent);border-radius:14px;min-height:46px;font-size:13px;font-weight:550;box-shadow:inset 0 1px 0 #ffffff36;transition:background 180ms ease,border-color 180ms ease,transform 180ms ease}
-body:not(.auth-shell) .button:hover:not(:disabled){background:var(--sync-accent-hover);transform:translateY(-1px);box-shadow:inset 0 1px 0 #ffffff36,0 6px 18px #030e0a30}
-body:not(.auth-shell) .button:is(.light,.ghost){background:var(--sync-accent-soft);border-color:var(--sync-line-strong);color:var(--sync-text);box-shadow:inset 0 1px 0 #ffffff08}
-body:not(.auth-shell) .button:is(.light,.ghost):hover:not(:disabled){background:#e2edb723;border-color:#dbe8d073}
-body:not(.auth-shell) .button:is(.admin-person-danger-button,[data-action=confirm-cancel]){background:var(--sync-danger-solid);border-color:#ffc3b747;color:#fff3ed}
-body:not(.auth-shell) .button:is(.admin-person-danger-button,[data-action=confirm-cancel]):hover{background:#895044}
+body:not(.auth-shell) .button{background:var(--sync-accent);border:1px solid var(--sync-action-line);color:var(--sync-on-accent);border-radius:14px;min-height:46px;font-size:13px;font-weight:550;box-shadow:inset 0 1px 0 var(--sync-highlight-action);transition:background 180ms ease,border-color 180ms ease,transform 180ms ease}
+body:not(.auth-shell) .button:hover:not(:disabled){background:var(--sync-accent-hover);transform:translateY(-1px);box-shadow:inset 0 1px 0 var(--sync-highlight-action),0 6px 18px var(--sync-action-shadow)}
+body:not(.auth-shell) .button:is(.light,.ghost){background:var(--sync-accent-soft);border-color:var(--sync-line-strong);color:var(--sync-text);box-shadow:inset 0 1px 0 var(--sync-highlight-faint)}
+body:not(.auth-shell) .button:is(.light,.ghost):hover:not(:disabled){background:var(--sync-surface-hover);border-color:var(--sync-line-hover)}
+body:not(.auth-shell) .button:is(.admin-person-danger-button,[data-action=confirm-cancel]){background:var(--sync-danger-solid);border-color:var(--sync-danger-line);color:var(--sync-on-danger)}
+body:not(.auth-shell) .button:is(.admin-person-danger-button,[data-action=confirm-cancel]):hover{background:var(--sync-danger-hover)}
 body:not(.auth-shell) .button:disabled{background:var(--sync-track);border-color:var(--sync-line);color:var(--sync-muted);box-shadow:none;transform:none;cursor:not-allowed}
 body:not(.auth-shell) :is(button,a,input,select,textarea,summary):focus-visible{outline:2px solid var(--sync-accent);outline-offset:3px}
 body:not(.auth-shell) :is(.text-button,.account-link,.wallet-detail-link,.report-text,.people-back,.mp-back){color:var(--sync-accent)}
 
 /* Glass belongs to the container; detailed information has a quiet, opaque base. */
-body:not(.auth-shell) :is(.panel,.staff-panel,.report-panel,.account-panel,.people-profile-panel,.mp-identity,.mp-summary>section,.admin-person-history,.instructor-panel){background:var(--sync-glass-strong);border-color:var(--sync-line);border-radius:24px;box-shadow:inset 0 1px 0 #ffffff09,var(--sync-shadow)}
-body:not(.auth-shell) :is(.people-directory,.account-identity,.account-wallet-preview,.wallet-service-card,.wallet-reward-card,.instructor-session,.visit-journey,.reward){border-radius:24px;border-color:var(--sync-line);box-shadow:inset 0 1px 0 #ffffff0e,var(--sync-shadow);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+body:not(.auth-shell) :is(.panel,.staff-panel,.report-panel,.account-panel,.people-profile-panel,.mp-identity,.mp-summary>section,.admin-person-history,.instructor-panel){background:var(--sync-glass-strong);border-color:var(--sync-line);border-radius:24px;box-shadow:inset 0 1px 0 var(--sync-highlight-panel),var(--sync-shadow)}
+body:not(.auth-shell) :is(.people-directory,.account-identity,.account-wallet-preview,.wallet-service-card,.wallet-reward-card,.instructor-session,.visit-journey,.reward){border-radius:24px;border-color:var(--sync-line);box-shadow:inset 0 1px 0 var(--sync-highlight-card),var(--sync-shadow);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table){color:var(--sync-text)}
-body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) th{color:var(--sync-muted);background:#0d231b70;border-color:var(--sync-line);font-size:11px;font-weight:500}
+body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) th{color:var(--sync-muted);background:var(--sync-table-header);border-color:var(--sync-line);font-size:11px;font-weight:500}
 body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) td{border-color:var(--sync-line)}
 body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) tbody tr:hover{background:var(--sync-surface-soft)}
 body:not(.auth-shell) :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea){background-color:var(--sync-input);border-color:var(--sync-line-strong);border-radius:14px;color:var(--sync-text);caret-color:var(--sync-accent);min-height:44px}
@@ -91,11 +139,11 @@ body:not(.auth-shell) :is(.people-search:focus-within,.portal-field:focus-within
 .account-preference-row input:checked:after{background:var(--sync-on-accent)}
 
 /* Shared overlays, with enough opacity for forms and long records. */
-body:not(.auth-shell) dialog,body:not(.auth-shell) #modal.wallet-detail-dialog{background:#1b342cf5;color:var(--sync-text);border:1px solid var(--sync-line-strong);border-radius:24px;box-shadow:0 24px 90px #0008;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
-body:not(.auth-shell) dialog::backdrop{background:#030e0ab3;backdrop-filter:blur(4px)}
+body:not(.auth-shell) dialog,body:not(.auth-shell) #modal.wallet-detail-dialog{background:var(--sync-dialog-surface);color:var(--sync-text);border:1px solid var(--sync-line-strong);border-radius:24px;box-shadow:0 24px 90px var(--sync-dialog-shadow);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+body:not(.auth-shell) dialog::backdrop{background:var(--sync-backdrop);backdrop-filter:blur(4px)}
 body:not(.auth-shell) :is(.wallet-detail-dialog .modal-heading,.admin-person-menu>div){background:var(--sync-surface);border-color:var(--sync-line)}
 body:not(.auth-shell) :is(.close,.staff-menu-close){background:var(--sync-accent-soft);color:var(--sync-text);border:1px solid var(--sync-line)}
-body:not(.auth-shell) #toast{background:#203c31;color:var(--sync-text);border:1px solid var(--sync-line-strong);box-shadow:var(--sync-shadow)}
+body:not(.auth-shell) #toast{background:var(--sync-toast-surface);color:var(--sync-text);border:1px solid var(--sync-line-strong);box-shadow:var(--sync-shadow)}
 body:not(.auth-shell) .staff-menu-dialog{background:var(--sync-glass-strong);border-color:var(--sync-line-strong)}
 body:not(.auth-shell) :is(.staff-account-actions button,.staff-account-actions .account-menu-profile,.staff-more-links a){color:var(--sync-text)}
 body:not(.auth-shell) :is(.staff-more-links a:hover,.staff-account-actions button:hover,.staff-account-actions .account-menu-profile:hover){background:var(--sync-accent-soft)}
@@ -108,7 +156,7 @@ body:not(.auth-shell) .staff-sign-out{color:var(--sync-muted)}
 .tier-card .badge{background:var(--sync-accent-soft);border-color:var(--sync-line);color:var(--sync-sage)}
 .tier-card.tier-core .badge{background:var(--sync-blue-soft);border-color:var(--sync-blue-line);color:var(--sync-blue)}
 .tier-card.tier-luxe .badge{background:var(--sync-gold-soft);border-color:var(--sync-gold-line);color:var(--sync-gold)}
-.tier-card .tier-benefits{background:#0c231e40;border-color:var(--tier-border)}
+.tier-card .tier-benefits{background:var(--sync-inset-surface);border-color:var(--tier-border)}
 .tier-card .tier-card-bottom img{filter:invert(1)}
 .staff-tier.plus,.people-role--member{background:var(--sync-accent-soft);color:var(--sync-sage);border-color:var(--sync-line)}
 .staff-tier.core,.journey-core .journey-member-badge{background:var(--sync-blue-soft);color:var(--sync-blue);border-color:var(--sync-blue-line)}
@@ -121,37 +169,37 @@ body:not(.auth-shell) .staff-sign-out{color:var(--sync-muted)}
 .wallet-service-contrast .wallet-session-meter>span{background:var(--sync-blue)}
 .wallet-session-meter>span.allocated,.wallet-service-contrast .wallet-session-meter>span.allocated,.wallet-pass-past .wallet-session-meter>span,.wallet-session-meter.continuous{background:var(--sync-track)}
 .reward-artwork{border-color:var(--sync-line)}
-.reward-yoga .art-word{color:#3f604c}
+.reward-yoga .art-word{color:var(--sync-service-ink)}
 .duration-chip{color:var(--sync-text)}
 .reward-availability.ready::before{background:var(--sync-success)}
 .reward-guest .reward-artwork{background:var(--sync-gold-glass);border-color:var(--sync-gold-line)}
 .reward-guest .reward-art-top{color:var(--sync-gold)}
-.guest-ticket{background:#e5d8b0;color:#34412d;border-color:#f1e6bd}
-.flow-ribbon{filter:drop-shadow(0 5px 12px #070f0a33)}
+.guest-ticket{background:var(--sync-ticket-paper);color:var(--sync-ticket-ink);border-color:var(--sync-ticket-line)}
+.flow-ribbon{filter:drop-shadow(0 5px 12px var(--sync-art-shadow))}
 
 /* Chart categories remain distinct against the dark reporting panels. */
-.report-chart-track{border-color:var(--sync-line);background:repeating-linear-gradient(to top,transparent 0,transparent 29px,#dbe8d010 29px,#dbe8d010 30px)}
+.report-chart-track{border-color:var(--sync-line);background:repeating-linear-gradient(to top,transparent 0,transparent 29px,var(--sync-chart-grid) 29px,var(--sync-chart-grid) 30px)}
 .report-chart-checked,.report-chart-legend>span:first-child i{background:var(--sync-sage)}
 .report-chart-missed,.report-chart-legend>span:last-child i{background:var(--sync-gold)}
 .report-chart-column[aria-pressed=true]{background:var(--sync-accent-soft);border-color:var(--sync-line-strong);color:var(--sync-text)}
 .report-chart-column:hover{background:var(--sync-surface-soft)}
 .report-metric-primary{background:var(--sync-yoga-glass);border-color:var(--sync-line-strong)}
 .report-metric-primary strong{color:var(--sync-accent)}
-.booking-row[data-session-state=ended]{background:#172b24b3;border-color:var(--sync-line)}
+.booking-row[data-session-state=ended]{background:var(--sync-ended-surface);border-color:var(--sync-line)}
 .booking-row[data-session-state=ended] :is(.booking-time,.booking-info h3){color:var(--sync-muted)}
 .booking-row[data-session-state=in-progress]{background:var(--sync-gold-soft);border-color:var(--sync-gold-line)}
 
 /* Scan content and user images retain their own contrast and colours. */
-.account-qr{background:#fff;color:#000;color-scheme:light;border-color:#fff}
-.account-qr svg{background:#fff}
+.account-qr{background:var(--sync-qr-paper);color:var(--sync-qr-ink);color-scheme:light;border-color:var(--sync-qr-paper)}
+.account-qr svg{background:var(--sync-qr-paper)}
 .checkin-video,video,canvas,img{mix-blend-mode:normal}
 body.admin-shell{background:var(--sync-bg)}
 .admin-shell .staff-sidebar{background:var(--sync-glass-strong);border-color:var(--sync-line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .admin-shell .staff-sidebar nav a{color:var(--sync-muted)}
 .admin-shell .staff-sidebar nav a:hover{background:var(--sync-accent-soft);color:var(--sync-text)}
 .admin-shell .staff-sidebar nav a.selected{background:var(--sync-accent);color:var(--sync-on-accent)}
-.admin-shell .header{background:#101f1bed;border-color:var(--sync-line)}
-.staff-bottom-nav{background:#13281ff0;border-color:var(--sync-line);box-shadow:0 -6px 30px #0003}
+.admin-shell .header{background:var(--sync-header-surface);border-color:var(--sync-line)}
+.staff-bottom-nav{background:var(--sync-bottom-nav);border-color:var(--sync-line);box-shadow:0 -6px 30px var(--sync-nav-shadow)}
 .staff-bottom-link{color:var(--sync-muted)}
 .staff-bottom-link.selected,.staff-bottom-link[aria-expanded=true]{color:var(--sync-accent)}
 .staff-bottom-link.selected>.staff-nav-icon,.staff-bottom-link[aria-expanded=true]>.staff-nav-icon{background:var(--sync-accent-soft)}
@@ -165,4 +213,24 @@ body.admin-shell{background:var(--sync-bg)}
 }
 @media(prefers-reduced-motion:reduce){body:not(.auth-shell) .button{transition:none}body:not(.auth-shell) .button:hover:not(:disabled){transform:none}}
 @media(forced-colors:active){body:not(.auth-shell) select:not([multiple]):is(:not([size]),[size="1"]){appearance:auto;-webkit-appearance:menulist;background-image:none;padding-inline-end:12px}}
-@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){:root{--sync-glass:#1b352b;--sync-glass-strong:#192f27}body:not(.auth-shell) dialog{background:#1b342c}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){:root{--sync-glass:var(--sync-glass-solid);--sync-glass-strong:var(--sync-surface)}body:not(.auth-shell) dialog{background:var(--sync-dialog-solid)}}
+
+/* Legible utility text and quiet labels throughout the member workspace. */
+html,body{overflow-x:clip}
+body{font-family:var(--sync-font-body)}
+body:not(.auth-shell) :is(.badge,.overview-tier,.overview-kicker,.booking-daypart,.reward-details>span,.table th,.staff-table th){letter-spacing:normal;text-transform:none}
+body:not(.auth-shell) .inline-note{font-size:var(--sync-text-small);line-height:1.7}
+body:not(.auth-shell) .booking-list .booking-info p{font-size:var(--sync-text-body)}
+body:not(.auth-shell) :is(.booking-timezone-note,.booking-end-time,.booking-availability .spots,.booking-daypart){font-size:var(--sync-text-small)}
+body:not(.auth-shell) .reward-redemption .button{font-size:var(--sync-text-body)}
+body:not(.auth-shell) :is(h1,h2,h3){min-width:0;overflow-wrap:break-word}
+
+body:not(.auth-shell) .reward-summary>.badge{background:transparent;border:0;font-size:14px;padding:8px 0}
+body:not(.auth-shell) .reward .reward-copy h3{font-size:22px;min-height:0;margin:0 0 12px}
+body:not(.auth-shell) .reward .reward-redemption{margin-top:auto}
+
+/* Clear the legacy illustration card spacing from design.css. */
+body:not(.auth-shell) .reward .reward-copy{padding:0;flex:1}
+body:not(.auth-shell) .reward .reward-description{min-height:0;font-size:14px;line-height:1.65}
+body:not(.auth-shell) .reward .reward-availability{flex-basis:auto;font-size:13px}
+body:not(.auth-shell) .reward .reward-price small{font-size:14px}

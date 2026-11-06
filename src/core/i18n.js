@@ -3,6 +3,8 @@ const I18n = (() => {
   let language = 'en';
   try { language = localStorage.getItem('sync-language') === 'zh-TW' ? 'zh-TW' : 'en'; } catch {}
   const strings = {
+    'Redeem reward':'兌換獎勵',
+    'points available':'可用點數',
     'SYNC membership':'SYNC 會員',
     'View member benefits':'查看會員禮遇',
     'Yoga class credit':'瑜伽單堂票',
