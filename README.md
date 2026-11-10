@@ -4,7 +4,21 @@ A wellness web app for Yoga and Contrast Therapy bookings, member rewards and da
 
 **[Open the live demo](https://sync-wellness.vercel.app/)**
 
-## Latest update: member experience improvements
+## Latest update: quieter, clearer studio interface
+
+The `codex/unslop-sync` branch applies [unslop](https://github.com/heydamir/unslop) to the existing member and staff workspaces. Shared neutral surfaces, SYNC's original pale-lime accent, consistent spacing, readable labels and simpler motion put bookings, pass balances and studio operations first. English and Traditional Chinese labels are included.
+
+- The overview leads with the next visit, followed by pass balances and membership progress.
+- Sign-in, booking cards, wallet, rewards and staff tools share the same controls and surface hierarchy.
+- Decorative glow, glass effects and pointer-following card motion have been removed.
+
+[Overview](docs/reviews/unslop/overview-desktop.png) · [Booking](docs/reviews/unslop/booking-desktop.png) · [Staff schedule](docs/reviews/unslop/schedule-desktop.png) · [Sign-in](docs/reviews/unslop/sign-in.png)
+
+Verified member sign-in, booking and cancellation with pass deduction/restoration, and reward redemption with persisted points/pass balances. Member and admin screens were reviewed at 390 and 1440px, including Traditional Chinese member views. All 15 JavaScript files passed syntax checks and all 25 stylesheets passed PostCSS parsing. Camera scanning was not completed because the browser handed control to the user at the camera permission prompt; front-desk and instructor sessions were not separately exercised. This is not a full accessibility audit.
+
+Design method: **unslop by Damir Sokolovsky**, used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The method has been adapted to SYNC's existing product and brand.
+
+## Previous update: member experience improvements
 
 Deployed on 7 November 2026 ([implementation commit](https://github.com/ikigaiwif606-acc/SYNC-APP/commit/c9ca1a049c14de674433cad95d9112dae73b3695)).
 
