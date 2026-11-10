@@ -1,6 +1,3 @@
-/* Hallmark · checked: 2026-11-07 · genre: modern-minimal (inferred) · scope: app
- * targeted review fixes; full-project Floor findings remain under audit
- * built: the project · redesign: polish · v2.0.0 */
 /* Compact reward choices: the offer and action precede delivery details. */
 .rewards-view .page-intro{margin-bottom:24px}
 .reward-summary{margin-bottom:24px;gap:16px;flex-wrap:wrap}
@@ -11,11 +8,11 @@
 .reward-title-row{display:flex;align-items:flex-start;gap:12px}
 .reward-service-icon{display:inline-flex;color:var(--sync-accent);flex-shrink:0}
 .reward-service-icon .icon{width:24px;height:24px}
-.reward .reward-copy h3{font-size:22px;line-height:1.3;letter-spacing:-.4px;margin:0 0 16px;min-width:0;overflow-wrap:break-word}
+.reward .reward-copy h3{font-size:22px;line-height:1.3;letter-spacing:normal;margin:0 0 16px;min-width:0;overflow-wrap:break-word}
 .reward .reward-description{margin:0}
 .reward-redemption{margin-top:auto;padding-top:24px}
 .reward-cost-row{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px}
-.reward .reward-price{font-size:30px;line-height:1.2;font-variant-numeric:tabular-nums;letter-spacing:-.5px;color:var(--sync-text)}
+.reward .reward-price{font-size:30px;line-height:1.2;font-variant-numeric:tabular-nums;letter-spacing:normal;color:var(--sync-text)}
 .reward .reward-price small{font-size:14px;letter-spacing:normal;color:var(--sync-muted)}
 .reward .reward-availability{color:var(--sync-muted)}
 .reward .reward-availability.ready{color:var(--sync-success)}
@@ -23,24 +20,24 @@
 .reward .reward-balance{margin:12px 0 0;color:var(--sync-muted)}
 .reward-terms{border-top:1px solid var(--sync-line);margin-top:20px;padding-top:16px}
 .reward-details{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0}
-.reward-details>span{display:inline-flex;align-items:center;gap:6px;color:var(--sync-muted)}
+.reward-details>span{display:inline-flex;align-items:center;gap:8px;color:var(--sync-muted)}
 .reward .reward-delivery{padding:0;border:0}
 @media(max-width:1000px){.reward-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.reward-grid{grid-template-columns:minmax(0,1fr);gap:16px}.reward{padding:20px}.reward .reward-copy h3{font-size:22px}.reward-redemption{padding-top:20px}}
 /* Redemption makes the credit, destination and validity explicit. */
 .reward .reward-description,.reward .reward-delivery{font-size:14px;line-height:1.65;min-height:0}
-.reward .reward-delivery{color:var(--sync-text);margin:14px 0 0;padding-left:0;border-left:0}
+.reward .reward-delivery{color:var(--sync-text);margin:16px 0 0;padding-left:0;border-left:0}
 .reward .reward-balance,.reward .reward-availability,.reward .reward-details>span{font-size:13px;line-height:1.6}
 .reward .reward-availability{max-width:130px}.reward .reward-details .icon{width:15px;height:15px}
 .redemption-intro{display:flex;align-items:center;gap:16px;margin:24px 0;min-width:0}
 .redemption-symbol,.redemption-success-mark{display:grid;place-items:center;width:52px;height:52px;flex-shrink:0;border-radius:16px;background:var(--sync-success-soft);border:1px solid var(--sync-line-strong);color:var(--sync-accent)}
 .redemption-symbol .icon{width:28px;height:28px}.redemption-intro h3{font-size:24px;line-height:1.3;font-weight:500;margin:0 0 8px;overflow-wrap:anywhere}
 .redemption-intro p,.redemption-note{font-size:14px;line-height:1.7;color:var(--sync-muted);margin:0}
-.redemption-facts{margin:24px 0}.redemption-facts>div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:1px solid var(--sync-line);padding:14px 0;font-size:14px;line-height:1.6}
+.redemption-facts{margin:24px 0}.redemption-facts>div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:1px solid var(--sync-line);padding:16px 0;font-size:14px;line-height:1.6}
 .redemption-facts dt{color:var(--sync-muted)}.redemption-facts dd{margin:0;color:var(--sync-text);font-weight:500;text-align:right;overflow-wrap:anywhere;min-width:0}
-.redemption-note+.redemption-note{margin-top:12px}.redemption-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.redemption-actions .button{flex:1;min-height:48px;font-size:14px;line-height:1.5;display:flex;justify-content:center;align-items:center;gap:8px;padding:13px 18px}
-.redemption-success-mark{margin:10px auto 24px;width:64px;height:64px;border-radius:50%;font-size:30px;box-shadow:0 0 36px var(--sync-success-soft)}
-.redemption-success>h3{font-size:28px;line-height:1.3;text-align:center;font-weight:450;margin:0 0 14px;overflow-wrap:anywhere}
+.redemption-note+.redemption-note{margin-top:12px}.redemption-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.redemption-actions .button{flex:1;min-height:48px;font-size:14px;line-height:1.5;display:flex;justify-content:center;align-items:center;gap:8px;padding:12px 20px}
+.redemption-success-mark{margin:12px auto 24px;width:64px;height:64px;border-radius:50%;font-size:30px;box-shadow:none}
+.redemption-success>h3{font-size:28px;line-height:1.3;text-align:center;font-weight:400;margin:0 0 16px;overflow-wrap:anywhere}
 .redemption-success>p{text-align:center;font-size:15px;line-height:1.7;color:var(--sync-muted);margin:0}
 @media(max-width:540px){.redemption-actions{flex-direction:column}.redemption-actions .button{width:100%;flex:auto}.redemption-intro{gap:12px}.redemption-intro h3{font-size:22px}.redemption-facts>div{flex-wrap:wrap;gap:4px 12px}.redemption-facts dd{margin-left:auto}.redemption-success>h3{font-size:25px}}

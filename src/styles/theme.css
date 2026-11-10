@@ -1,6 +1,3 @@
-/* Hallmark · checked: 2026-11-07 · genre: modern-minimal (inferred) · scope: app
- * targeted review fixes; full-project Floor findings remain under audit
- * built: the project · redesign: polish · v2.0.0 */
 /* Shared SYNC theme. Feature styles use these tokens; layouts stay with each feature. */
 :root{
   color-scheme:dark;
@@ -10,32 +7,32 @@
   --sync-nav-shadow:#0003;
   --sync-dialog-shadow:#0008;
   --sync-action-shadow:#030e0a30;
-  --sync-backdrop:#030e0ab3;
+  --sync-backdrop:#0009;
   --sync-art-shadow:#070f0a33;
-  --sync-inset-surface:#0c231e40;
-  --sync-table-header:#0d231b70;
-  --sync-header-surface:#101f1bed;
-  --sync-bottom-nav:#13281ff0;
-  --sync-scrollbar-track:#152b22;
-  --sync-ended-surface:#172b24b3;
-  --sync-dialog-solid:#1b342c;
-  --sync-dialog-surface:#1b342cf5;
-  --sync-glass-solid:#1b352b;
-  --sync-toast-surface:#203c31;
+  --sync-inset-surface:#171918;
+  --sync-table-header:#191c1a;
+  --sync-header-surface:#171918;
+  --sync-bottom-nav:#1f2220;
+  --sync-scrollbar-track:#171918;
+  --sync-ended-surface:#191c1a;
+  --sync-dialog-solid:#242724;
+  --sync-dialog-surface:#242724;
+  --sync-glass-solid:#1f2220;
+  --sync-toast-surface:#292c29;
   --sync-ambient-blue:#305f70;
   --sync-ticket-ink:#34412d;
   --sync-service-ink:#3f604c;
   --sync-ambient-sage:#54774b;
-  --sync-scrollbar-thumb:#667f64;
+  --sync-scrollbar-thumb:#636c61;
   --sync-danger-hover:#895044;
-  --sync-chart-grid:#dbe8d010;
-  --sync-line-hover:#dbe8d073;
+  --sync-chart-grid:#f0f1eb12;
+  --sync-line-hover:#f0f1eb50;
   --sync-focus-halo:#e2edb709;
-  --sync-surface-hover:#e2edb723;
+  --sync-surface-hover:#ffffff0a;
   --sync-selection:#e2edb738;
   --sync-ticket-paper:#e5d8b0;
-  --sync-nav-surface:#edf5e30a;
-  --sync-action-line:#edf8d369;
+  --sync-nav-surface:transparent;
+  --sync-action-line:transparent;
   --sync-ticket-line:#f1e6bd;
   --sync-danger-line:#ffc3b747;
   --sync-on-danger:#fff3ed;
@@ -49,41 +46,41 @@
   --sync-font-body:"DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;
   --sync-text-small:13px;
   --sync-text-body:14px;
-  --sync-bg:#101f1b;
-  --sync-surface:#192f27;
-  --sync-surface-raised:#20392f;
-  --sync-surface-soft:#e2edb70a;
-  --sync-glass:linear-gradient(130deg,#edf5d910,#b9d5c006),#17352acc;
-  --sync-glass-strong:linear-gradient(130deg,#edf5d90b,#b9d5c004),#173029f2;
-  --sync-input:#0f241dd9;
-  --sync-text:#f0f3e9;
-  --sync-muted:#b8c8b5;
-  --sync-faint:#9eB39f;
-  --sync-on-accent:#203425;
+  --sync-bg:#171918;
+  --sync-surface:#1f2220;
+  --sync-surface-raised:#292c29;
+  --sync-surface-soft:#ffffff05;
+  --sync-glass:var(--sync-surface);
+  --sync-glass-strong:var(--sync-surface);
+  --sync-input:#191c1a;
+  --sync-text:#f0f1eb;
+  --sync-muted:#b7bcb5;
+  --sync-faint:#969e95;
+  --sync-on-accent:#202b19;
   --sync-accent:#e2edb7;
   --sync-accent-hover:#ecf5ce;
-  --sync-accent-soft:#e2edb716;
-  --sync-line:#dbe8d02b;
-  --sync-line-strong:#dbe8d04d;
+  --sync-accent-soft:#e2edb70d;
+  --sync-line:#f0f1eb18;
+  --sync-line-strong:#f0f1eb38;
   --sync-blue:#b6dce7;
-  --sync-blue-soft:#9bc8da19;
-  --sync-blue-line:#b6dce740;
+  --sync-blue-soft:#b6dce70c;
+  --sync-blue-line:#b6dce730;
   --sync-sage:#c7daa8;
   --sync-teal:#acd9ca;
   --sync-teal-soft:#acd9ca16;
   --sync-gold:#ead59e;
-  --sync-gold-soft:#ead59e16;
-  --sync-gold-line:#ead59e42;
+  --sync-gold-soft:#ead59e0c;
+  --sync-gold-line:#ead59e30;
   --sync-success:#c7e0a5;
   --sync-success-soft:#c7e0a518;
   --sync-danger:#ffc3b7;
   --sync-danger-soft:#ef9c8517;
   --sync-danger-solid:#743f35;
-  --sync-track:#d7e7c817;
-  --sync-shadow:0 14px 36px #030e0a25;
-  --sync-yoga-glass:radial-gradient(ellipse at 100% 0,#bad69224,transparent 70%),linear-gradient(130deg,#456a3d70,#254b3970),#17352a99;
-  --sync-contrast-glass:radial-gradient(ellipse at 100% 0,#98d7ec20,transparent 70%),linear-gradient(130deg,#365e7670,#234a5f70),#142d2bcc;
-  --sync-gold-glass:radial-gradient(ellipse at 100% 0,#e5ce8a20,transparent 70%),linear-gradient(130deg,#4a49396b,#283c306b),#172a24cc;
+  --sync-track:#f0f1eb18;
+  --sync-shadow:none;
+  --sync-yoga-glass:var(--sync-surface);
+  --sync-contrast-glass:var(--sync-surface);
+  --sync-gold-glass:var(--sync-surface);
   --ink:var(--sync-text);--blue:var(--sync-blue);--mint:var(--sync-sage);--lime:var(--sync-accent);--snow:var(--sync-text);--muted:var(--sync-muted);--line:var(--sync-line);
 }
 html{background:var(--sync-bg);scrollbar-color:var(--sync-scrollbar-thumb) var(--sync-scrollbar-track)}
@@ -91,27 +88,24 @@ html{background:var(--sync-bg);scrollbar-color:var(--sync-scrollbar-thumb) var(-
 :where(a,button,summary,label,[role="button"]),:where(a,button,summary,label,[role="button"]):is(:hover,:focus,:active,:visited){text-decoration:none!important}
 body{background:var(--sync-bg);color:var(--sync-text);isolation:isolate;position:relative;min-height:100svh}
 ::selection{background:var(--sync-selection);color:var(--sync-text)}
-body:not(.auth-shell)>.ambient{position:fixed;z-index:-1;pointer-events:none;opacity:.34;filter:blur(50px);animation:none}
-body:not(.auth-shell)>.ambient-one{background:radial-gradient(ellipse,var(--sync-ambient-sage),transparent 70%);width:680px;height:680px;left:-260px;top:-250px}
-body:not(.auth-shell)>.ambient-two{background:radial-gradient(ellipse,var(--sync-ambient-blue),transparent 70%);width:680px;height:800px;right:-350px;top:300px}
 body:not(.auth-shell) .brand img{filter:invert(93%) sepia(17%) saturate(373%) hue-rotate(25deg) brightness(107%)}
 body:not(.auth-shell) .brand:before,body:not(.auth-shell) .brand:after{display:none}
 body:not(.auth-shell) :is(.brand span,.location,footer){color:var(--sync-muted);border-color:var(--sync-line)}
-body:not(.auth-shell) .header nav{background:var(--sync-nav-surface);border:1px solid var(--sync-line);box-shadow:inset 0 1px 0 var(--sync-highlight-nav),var(--sync-shadow);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+body:not(.auth-shell) .header nav{background:var(--sync-nav-surface);border:1px solid var(--sync-line);box-shadow:none;backdrop-filter:none}
 body:not(.auth-shell) .header nav a{color:var(--sync-muted)}
-body:not(.auth-shell) .header nav a.active{background:var(--sync-accent);color:var(--sync-on-accent);box-shadow:inset 0 1px 0 var(--sync-highlight-selected)}
-body:not(.auth-shell) :is(.language-button,.avatar,.staff-account-trigger){background:var(--sync-surface-soft);border-color:var(--sync-line-strong);color:var(--sync-text);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-body:not(.auth-shell) :is(.staff-account-trigger:hover,.staff-account-trigger[aria-expanded=true]){background:var(--sync-accent-soft);box-shadow:0 0 0 3px var(--sync-focus-halo)}
+body:not(.auth-shell) .header nav a.active{background:var(--sync-surface-raised);color:var(--sync-text);box-shadow:none}
+body:not(.auth-shell) :is(.language-button,.avatar,.staff-account-trigger){background:var(--sync-surface-soft);border-color:var(--sync-line-strong);color:var(--sync-text);backdrop-filter:none}
+body:not(.auth-shell) :is(.staff-account-trigger:hover,.staff-account-trigger[aria-expanded=true]){background:var(--sync-accent-soft);box-shadow:none}
 body:not(.auth-shell) :is(.eyebrow,.subtitle,.field,.inline-note,.modal-note,.modal-body,footer button){color:var(--sync-muted)}
 body:not(.auth-shell) :is(h1,h2,h3,h4,.page-title,.welcome h1,.staff-heading h1){color:var(--sync-text)}
-body:not(.auth-shell) .tabs button{background:var(--sync-accent-soft);color:var(--sync-muted);border-color:var(--sync-line-strong);border-radius:14px;min-height:44px}
-body:not(.auth-shell) .tabs button.selected{background:var(--sync-accent);color:var(--sync-on-accent);border-color:var(--sync-accent)}
+body:not(.auth-shell) .tabs button{background:var(--sync-accent-soft);color:var(--sync-muted);border-color:var(--sync-line-strong);border-radius:8px;min-height:44px}
+body:not(.auth-shell) .tabs button.selected{background:var(--sync-surface-raised);color:var(--sync-accent);border-color:var(--sync-line-strong)}
 body:not(.auth-shell) :is(.staff-stats strong,.report-metric strong,.wallet-package-balance>strong,.mp-summary strong,.account-summary strong){color:var(--sync-text)}
 
 /* One action hierarchy, including controls inside feature cards and dialogs. */
-body:not(.auth-shell) .button{background:var(--sync-accent);border:1px solid var(--sync-action-line);color:var(--sync-on-accent);border-radius:14px;min-height:46px;font-size:13px;font-weight:550;box-shadow:inset 0 1px 0 var(--sync-highlight-action);transition:background 180ms ease,border-color 180ms ease,transform 180ms ease}
-body:not(.auth-shell) .button:hover:not(:disabled){background:var(--sync-accent-hover);transform:translateY(-1px);box-shadow:inset 0 1px 0 var(--sync-highlight-action),0 6px 18px var(--sync-action-shadow)}
-body:not(.auth-shell) .button:is(.light,.ghost){background:var(--sync-accent-soft);border-color:var(--sync-line-strong);color:var(--sync-text);box-shadow:inset 0 1px 0 var(--sync-highlight-faint)}
+body:not(.auth-shell) .button{background:var(--sync-accent);border:1px solid var(--sync-action-line);color:var(--sync-on-accent);border-radius:8px;min-height:44px;font-size:13px;font-weight:500;box-shadow:none;transition:background 180ms ease,border-color 180ms ease,transform 180ms ease}
+body:not(.auth-shell) .button:hover:not(:disabled){background:var(--sync-accent-hover);transform:none;box-shadow:none}
+body:not(.auth-shell) .button:is(.light,.ghost){background:var(--sync-accent-soft);border-color:var(--sync-line-strong);color:var(--sync-text);box-shadow:none}
 body:not(.auth-shell) .button:is(.light,.ghost):hover:not(:disabled){background:var(--sync-surface-hover);border-color:var(--sync-line-hover)}
 body:not(.auth-shell) .button:is(.admin-person-danger-button,[data-action=confirm-cancel]){background:var(--sync-danger-solid);border-color:var(--sync-danger-line);color:var(--sync-on-danger)}
 body:not(.auth-shell) .button:is(.admin-person-danger-button,[data-action=confirm-cancel]):hover{background:var(--sync-danger-hover)}
@@ -119,14 +113,14 @@ body:not(.auth-shell) .button:disabled{background:var(--sync-track);border-color
 body:not(.auth-shell) :is(button,a,input,select,textarea,summary):focus-visible{outline:2px solid var(--sync-accent);outline-offset:3px}
 body:not(.auth-shell) :is(.text-button,.account-link,.wallet-detail-link,.report-text,.people-back,.mp-back){color:var(--sync-accent)}
 
-/* Glass belongs to the container; detailed information has a quiet, opaque base. */
-body:not(.auth-shell) :is(.panel,.staff-panel,.report-panel,.account-panel,.people-profile-panel,.mp-identity,.mp-summary>section,.admin-person-history,.instructor-panel){background:var(--sync-glass-strong);border-color:var(--sync-line);border-radius:24px;box-shadow:inset 0 1px 0 var(--sync-highlight-panel),var(--sync-shadow)}
-body:not(.auth-shell) :is(.people-directory,.account-identity,.account-wallet-preview,.wallet-service-card,.wallet-reward-card,.instructor-session,.visit-journey,.reward){border-radius:24px;border-color:var(--sync-line);box-shadow:inset 0 1px 0 var(--sync-highlight-card),var(--sync-shadow);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+/* Opaque surfaces keep member and staff information legible. */
+body:not(.auth-shell) :is(.panel,.staff-panel,.report-panel,.account-panel,.people-profile-panel,.mp-identity,.mp-summary>section,.admin-person-history,.instructor-panel){background:var(--sync-glass-strong);border-color:var(--sync-line);border-radius:16px;box-shadow:none}
+body:not(.auth-shell) :is(.people-directory,.account-identity,.account-wallet-preview,.wallet-service-card,.wallet-reward-card,.instructor-session,.visit-journey,.reward){border-radius:16px;border-color:var(--sync-line);box-shadow:none;backdrop-filter:none}
 body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table){color:var(--sync-text)}
-body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) th{color:var(--sync-muted);background:var(--sync-table-header);border-color:var(--sync-line);font-size:11px;font-weight:500}
+body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) th{color:var(--sync-muted);background:var(--sync-table-header);border-color:var(--sync-line);font-size:12px;font-weight:500}
 body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) td{border-color:var(--sync-line)}
 body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) tbody tr:hover{background:var(--sync-surface-soft)}
-body:not(.auth-shell) :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea){background-color:var(--sync-input);border-color:var(--sync-line-strong);border-radius:14px;color:var(--sync-text);caret-color:var(--sync-accent);min-height:44px}
+body:not(.auth-shell) :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea){background-color:var(--sync-input);border-color:var(--sync-line-strong);border-radius:8px;color:var(--sync-text);caret-color:var(--sync-accent);min-height:44px}
 /* Keep single-select chevrons centred and clear of both the text and rounded edge. */
 body:not(.auth-shell) select:not([multiple]):is(:not([size]),[size="1"]){appearance:none;-webkit-appearance:none;background-image:url("../../assets/icons/chevron-down.svg");background-repeat:no-repeat;background-position:right 16px center;background-size:16px 16px;padding-inline-end:48px;text-overflow:ellipsis;cursor:pointer}
 body:not(.auth-shell) select:disabled{cursor:not-allowed}
@@ -139,11 +133,11 @@ body:not(.auth-shell) :is(.people-search:focus-within,.portal-field:focus-within
 .account-preference-row input:checked:after{background:var(--sync-on-accent)}
 
 /* Shared overlays, with enough opacity for forms and long records. */
-body:not(.auth-shell) dialog,body:not(.auth-shell) #modal.wallet-detail-dialog{background:var(--sync-dialog-surface);color:var(--sync-text);border:1px solid var(--sync-line-strong);border-radius:24px;box-shadow:0 24px 90px var(--sync-dialog-shadow);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
-body:not(.auth-shell) dialog::backdrop{background:var(--sync-backdrop);backdrop-filter:blur(4px)}
+body:not(.auth-shell) dialog,body:not(.auth-shell) #modal.wallet-detail-dialog{background:var(--sync-dialog-surface);color:var(--sync-text);border:1px solid var(--sync-line-strong);border-radius:16px;box-shadow:none;backdrop-filter:none}
+body:not(.auth-shell) dialog::backdrop{background:var(--sync-backdrop);backdrop-filter:none}
 body:not(.auth-shell) :is(.wallet-detail-dialog .modal-heading,.admin-person-menu>div){background:var(--sync-surface);border-color:var(--sync-line)}
 body:not(.auth-shell) :is(.close,.staff-menu-close){background:var(--sync-accent-soft);color:var(--sync-text);border:1px solid var(--sync-line)}
-body:not(.auth-shell) #toast{background:var(--sync-toast-surface);color:var(--sync-text);border:1px solid var(--sync-line-strong);box-shadow:var(--sync-shadow)}
+body:not(.auth-shell) #toast{background:var(--sync-toast-surface);color:var(--sync-text);border:1px solid var(--sync-line-strong);box-shadow:none}
 body:not(.auth-shell) .staff-menu-dialog{background:var(--sync-glass-strong);border-color:var(--sync-line-strong)}
 body:not(.auth-shell) :is(.staff-account-actions button,.staff-account-actions .account-menu-profile,.staff-more-links a){color:var(--sync-text)}
 body:not(.auth-shell) :is(.staff-more-links a:hover,.staff-account-actions button:hover,.staff-account-actions .account-menu-profile:hover){background:var(--sync-accent-soft)}
@@ -194,12 +188,12 @@ body:not(.auth-shell) .staff-sign-out{color:var(--sync-muted)}
 .account-qr svg{background:var(--sync-qr-paper)}
 .checkin-video,video,canvas,img{mix-blend-mode:normal}
 body.admin-shell{background:var(--sync-bg)}
-.admin-shell .staff-sidebar{background:var(--sync-glass-strong);border-color:var(--sync-line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.admin-shell .staff-sidebar{background:var(--sync-glass-strong);border-color:var(--sync-line);backdrop-filter:none}
 .admin-shell .staff-sidebar nav a{color:var(--sync-muted)}
 .admin-shell .staff-sidebar nav a:hover{background:var(--sync-accent-soft);color:var(--sync-text)}
-.admin-shell .staff-sidebar nav a.selected{background:var(--sync-accent);color:var(--sync-on-accent)}
+.admin-shell .staff-sidebar nav a.selected{background:var(--sync-surface-raised);color:var(--sync-accent)}
 .admin-shell .header{background:var(--sync-header-surface);border-color:var(--sync-line)}
-.staff-bottom-nav{background:var(--sync-bottom-nav);border-color:var(--sync-line);box-shadow:0 -6px 30px var(--sync-nav-shadow)}
+.staff-bottom-nav{background:var(--sync-bottom-nav);border-color:var(--sync-line);box-shadow:none}
 .staff-bottom-link{color:var(--sync-muted)}
 .staff-bottom-link.selected,.staff-bottom-link[aria-expanded=true]{color:var(--sync-accent)}
 .staff-bottom-link.selected>.staff-nav-icon,.staff-bottom-link[aria-expanded=true]>.staff-nav-icon{background:var(--sync-accent-soft)}
@@ -207,16 +201,12 @@ body.admin-shell{background:var(--sync-bg)}
 .staff-scan-link>.staff-nav-icon,.staff-scan-link.selected>.staff-nav-icon{background:var(--sync-accent);color:var(--sync-on-accent)}
 @media(max-width:700px){
   body:not(.auth-shell) :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea){font-size:16px}
-  body:not(.auth-shell) .button{font-size:12px;padding:11px 16px;min-height:44px}
-  body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) th{font-size:10px}
-  body:not(.auth-shell)>.ambient{opacity:.22;filter:blur(40px)}
-}
+  body:not(.auth-shell) .button{font-size:12px;padding:12px 16px;min-height:44px}
+  body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) th{font-size:12px}
+  }
 @media(prefers-reduced-motion:reduce){body:not(.auth-shell) .button{transition:none}body:not(.auth-shell) .button:hover:not(:disabled){transform:none}}
 @media(forced-colors:active){body:not(.auth-shell) select:not([multiple]):is(:not([size]),[size="1"]){appearance:auto;-webkit-appearance:menulist;background-image:none;padding-inline-end:12px}}
-@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){:root{--sync-glass:var(--sync-glass-solid);--sync-glass-strong:var(--sync-surface)}body:not(.auth-shell) dialog{background:var(--sync-dialog-solid)}}
-
-/* Legible utility text and quiet labels throughout the member workspace. */
-html,body{overflow-x:clip}
+/* Legible utility text throughout the member workspace. */
 body{font-family:var(--sync-font-body)}
 body:not(.auth-shell) :is(.badge,.overview-tier,.overview-kicker,.booking-daypart,.reward-details>span,.table th,.staff-table th){letter-spacing:normal;text-transform:none}
 body:not(.auth-shell) .inline-note{font-size:var(--sync-text-small);line-height:1.7}
@@ -234,3 +224,104 @@ body:not(.auth-shell) .reward .reward-copy{padding:0;flex:1}
 body:not(.auth-shell) .reward .reward-description{min-height:0;font-size:14px;line-height:1.65}
 body:not(.auth-shell) .reward .reward-availability{flex-basis:auto;font-size:13px}
 body:not(.auth-shell) .reward .reward-price small{font-size:14px}
+
+
+/* Unslop pass: quiet studio surfaces, a readable timetable, and one action accent.
+   Method: unslop by Damir Sokolovsky, https://github.com/heydamir/unslop (CC BY 4.0). */
+:root{--sync-ease:cubic-bezier(.22,1,.36,1);--sync-control-radius:8px;--sync-panel-radius:16px}
+body{line-height:1.5;font-variant-numeric:tabular-nums}
+body :is(.ambient,.welcome-light,.welcome-trails,.hero-aurora,.hero-lines,.premium-halo,.premium-reflection,.journey-light,.tier-sculpture,.account-membership-aura,.account-membership-orbit,.auth-forest-atmosphere){display:none}
+body :is(.tier-card,.premium-card,.member-card,.journey-glass,.schedule-card,.auth-form-panel)::before,
+body :is(.tier-card,.premium-card,.member-card,.journey-glass,.schedule-card,.auth-form-panel)::after{display:none}
+body :is(.tier-card,.tier-card.is-hovered,.reward,.reward.is-hovered,.wallet-service-card,.wallet-reward-card,.premium-float,.member-card){transform:none;animation:none;filter:none;will-change:auto}
+body :is(.hero,.dashboard-row,.experience-grid,.view-enter,.welcome-content>*,.welcome>.date,.welcome .dot,.account-membership-crest>svg){animation:none;opacity:1;transform:none;filter:none}
+body :is(.header .brand,.header .brand:hover) img{transform:none;transition:none}
+body :is(.header,.brand,.header-right){gap:16px}
+body:not(.auth-shell) .header{height:80px;padding-inline:32px}
+body .header .brand img{width:72px;height:44px}
+body .header .brand span,body .header .location{font-size:12px;letter-spacing:normal}
+body:not(.auth-shell) .header nav{border:0;border-radius:8px;padding:4px;gap:4px}
+body:not(.auth-shell) .header nav a{border-radius:8px;min-height:40px;display:flex;align-items:center;padding:8px 16px;font-size:14px;transition:background 160ms var(--sync-ease),color 160ms var(--sync-ease)}
+body:not(.auth-shell) .header nav a:hover{background:var(--sync-surface-raised);color:var(--sync-text)}
+body :is(.language-button,.avatar,.staff-account-trigger){min-width:44px;min-height:44px;font-size:13px}
+body .language-button{border-radius:8px;padding:8px 12px}
+body:not(.auth-shell):not(.admin-shell) main{max-width:1280px;margin:24px auto 0;padding:0 32px 32px}
+body :is(.page-title,.welcome h1,.staff-heading h1){font-size:32px;line-height:1.2;letter-spacing:-.02em;font-weight:400}
+body :is(.subtitle,.modal-body,.portal-notice,.field,.account-field,.booking-info p){font-size:14px;line-height:1.6}
+body :is(.eyebrow,.date,.inline-note,.modal-note,.staff-status,.badge,.portal-demo-label,.staff-tier,.people-role,.tier-card .badge,.wallet-status){font-size:12px;line-height:1.5;letter-spacing:normal;text-transform:none}
+body .eyebrow{margin-bottom:8px}
+body :is(.text-button,.overview-link,.wallet-detail-link,.account-link,.staff-small-button){font-size:13px;min-height:44px}
+body :is(.button,.staff-small-button,.staff-filter-button,.account-filter button){border-radius:var(--sync-control-radius);min-height:44px;font-weight:500;transition:background 160ms var(--sync-ease),color 160ms var(--sync-ease),border-color 160ms var(--sync-ease)}
+body .button:hover{transform:none}
+body .button:active:not(:disabled){transform:translateY(1px)}
+body .close{width:40px;height:40px;border-radius:8px}
+body :is(.icon,.staff-nav-icon .icon,.auth-field-icon){width:18px;height:18px;stroke-width:1.5;flex-shrink:0}
+body:not(.auth-shell) :is(.panel,.staff-panel,.report-panel,.account-panel,.instructor-panel){padding:24px}
+body :is(.table,.staff-table,.people-table,.mp-table) :is(th,td){font-size:13px;padding-block:16px;line-height:1.5}
+body:not(.auth-shell) :is(.table,.staff-table,.people-table,.mp-table) th{font-size:12px}
+body :is(.schedule-card,.schedule-card.contrast,.schedule-card[data-state=in_progress],.wallet-service-face,.wallet-service-contrast .wallet-service-face,.wallet-reward-card,.account-view .account-membership-card,.account-view .account-membership-card.membership-core,.account-view .account-membership-card.membership-luxe,.tier-card,.tier-card.tier-luxe,.membership-hero,.premium-card,.scene-core .premium-card,.scene-luxe .premium-card){background:var(--sync-surface);border-color:var(--sync-line);border-radius:16px}
+body .schedule-card[data-state=ended]{background:var(--sync-ended-surface)}
+body .schedule-card{padding:20px;gap:16px}
+body .schedule-card:hover{transform:none;border-color:var(--sync-line-strong)}
+body :is(.booking-time,.schedule-time,.overview-session-when strong){font-variant-numeric:tabular-nums;letter-spacing:normal}
+body .booking-row[data-session-time]{padding:24px;border-radius:12px;gap:24px;background:var(--sync-surface)}
+body .booking-row[data-session-state=ended]{background:var(--sync-ended-surface)}
+body .booking-row[data-session-state=in-progress]{border-inline-start:3px solid var(--sync-gold)}
+body .booking-info h3{font-size:18px;line-height:1.4}
+body .booking-time{font-size:28px}
+body .booking-daypart .icon{width:16px;height:16px}
+body .overview-service-icon{display:none}
+body .wallet-service-face{padding:24px}
+body :is(.wallet-service-art,.account-membership-crest,.tier-card .tier-ornament){display:none}
+body .account-view .account-membership-card{border-inline-start:3px solid var(--sync-accent)}
+body .tier-card.current-tier{border-color:var(--sync-accent)}
+body .tier-card .tier-benefits{background:transparent}
+body .report-chart-missed,body .report-chart-legend>span:last-child i{background:#8e968c}
+body .report-chart-stack{border-radius:4px 4px 0 0}
+body .report-chart-column{border-radius:8px}
+body .report-metric-primary{background:var(--sync-surface)}
+body .staff-sidebar-heading>span,body .staff-sidebar-location,body .staff-menu-heading p{font-size:12px;letter-spacing:normal;text-transform:none}
+body.admin-shell .staff-sidebar{border-radius:12px;padding:16px}
+body.admin-shell .staff-sidebar nav{gap:4px}
+body.admin-shell .staff-sidebar nav a{font-size:14px;min-height:40px;padding:8px 12px!important;gap:12px;border-radius:8px}
+body.admin-shell .staff-sidebar-heading{padding:8px 12px 20px}
+body .staff-bottom-link>span:last-child{font-size:12px}
+body .staff-bottom-nav{box-shadow:none}
+body :is(.account-settings-body,#account-tab-content,.wallet-expanded,.wallet-new-credit,.wallet-history-row){animation:none}
+body :is(.sync-contact-card,.sync-social-links a){background:transparent;box-shadow:none;border-radius:8px}
+body .sync-site-footer{font-size:12px}
+body:not(.auth-shell) dialog{box-shadow:0 16px 48px #0005}
+body dialog[open]{animation:sync-dialog-in 180ms var(--sync-ease)}
+@keyframes sync-dialog-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(min-width:1025px){body.admin-shell .staff-layout{grid-template-columns:240px minmax(0,1fr);gap:32px}body.admin-shell .staff-sidebar{top:96px}}
+@media(max-width:700px){
+  body:not(.auth-shell) .header{height:72px;padding:0 20px}
+  body:not(.auth-shell):not(.admin-shell) main{margin-top:20px;padding:0 20px 24px}
+  body:not(.auth-shell) .header nav{background:var(--sync-bottom-nav);border:1px solid var(--sync-line);padding:8px 8px max(8px,env(safe-area-inset-bottom));border-radius:0;left:0;right:0;bottom:0;gap:4px;transform:none;width:auto;max-width:none}
+  body:not(.auth-shell) .header nav a{font-size:12px;padding:8px 4px;min-height:44px;justify-content:center;flex:1}
+  body .header .brand span,body .header .location{display:none}
+  body .header .brand img{width:64px;height:40px}
+  body :is(.page-title,.welcome h1,.staff-heading h1){font-size:28px;line-height:1.3}
+  body:not(.auth-shell) :is(.panel,.staff-panel,.report-panel,.account-panel,.instructor-panel){padding:20px}
+  body .booking-row[data-session-time]{padding:20px;gap:16px}
+  body .booking-info h3{font-size:16px}
+  body .booking-time{font-size:24px}
+  body:not(.auth-shell) .button{font-size:14px;padding:12px 16px}
+  body .staff-bottom-nav{padding-inline:8px}
+  body .staff-bottom-link{min-height:64px}
+}
+@media(prefers-reduced-motion:reduce){body dialog[open]{animation:none}}
+
+body :is(.experience-art,.tier-art){display:none}
+body .tier-heading{max-width:100%}
+body .tier-identity{min-height:112px}
+body .tier-card{min-height:0}
+body .tier-card h2{font-size:40px}
+body .tier-card.current-tier{outline:none}
+
+body .schedule-menu{background:var(--sync-dialog-surface)}
+
+body .booking-tools{align-items:flex-end;gap:16px;margin:24px 0 16px}
+body .booking-tools .text-button{padding:8px 0}
+body .booking-timezone-note{margin:0 0 16px}
+body .booking-daypart{background:transparent;border:0;padding:4px 0;color:var(--sync-muted)}

@@ -20,7 +20,7 @@
     'Yoga guest reward':'瑜伽好友獎勵','Manual points adjustment':'手動點數調整','Pass issue':'堂票發放','Check-in':'報到','Session creation':'新增課程','Session update':'更新課程','Session cancellation':'取消課程','Guest voucher use':'好友券使用','Demo registration':'模擬註冊','Member check-in':'會員報到','Refunds are not implemented in this version.':'此版本尚未提供退款功能。','No orders yet.':'尚無訂單。','No active passes.':'尚無有效堂票。','Staff only':'工作人員專用','Manage your next moment.':'管理下一段療癒時光。'
   };
   Object.assign(copy, {
-    'SIGN IN':'登入','Welcome back':'歡迎回來','Sign in to your SYNC account.':'登入你的 SYNC 帳戶。',
+    'Sign in':'登入','Welcome back':'歡迎回來','Sign in to your SYNC account.':'登入你的 SYNC 帳戶。',
     'Enter your password':'輸入密碼','Create a demo password (8+ characters)':'設定示範密碼（至少 8 個字元）',
     'Keep me signed in':'保持登入','Create an account':'建立帳戶','Try a demo account':'試用示範帳戶','Demo':'示範',
     'Sample accounts':'示範帳戶','Shared demo password':'共用示範密碼','Use a sample account to fill the form, then sign in.':'選取示範帳戶以填入資料，再按登入。',
@@ -489,11 +489,11 @@
   function authPage(mode){
     const register=mode==='register',recover=mode==='forgot',verify=mode==='verify',sent=mode==='reset-sent';
     const login=!register&&!recover&&!verify&&!sent;
-    const title=register?'Free to join. Yours to enjoy.':recover?'Reset your password.':verify||sent?'Check your inbox.':'Welcome back';
+    const title=register?'Create your account':recover?'Reset your password':verify||sent?'Check your inbox':'Sign in to SYNC';
     const description=register?'Start with Plus membership, then grow at your own pace.':recover?'Enter your email to preview the recovery flow.':verify?'Check your email to verify your account.':sent?'This is a preview only. No email was sent.':'Sign in to your SYNC account.';
     return `<section class="auth-layout auth-forest${login?' auth-login':''}">
-      <div class="auth-forest-atmosphere" aria-hidden="true"><span></span><span></span></div>
-      <div class="auth-arrival"><span class="auth-kicker">SYNC · TAIPEI XINYI</span><p>${t('A little space. A better day.')}</p></div>
+
+      <div class="auth-arrival"><span class="auth-kicker">SYNC · TAIPEI XINYI</span><p>${t('Yoga, Contrast Therapy and your next visit')}</p></div>
       <div class="auth-form-panel"><div class="auth-form-content">${login?'':`<span class="portal-demo-label">${t('Demo mode')}</span>`}<h1>${t(title)}</h1><p class="auth-description">${t(description)}</p>
       ${verify||sent?`<div class="auth-success-icon" aria-hidden="true">✓</div><p class="portal-notice">${t('This is a preview only. No email was sent.')}</p>${verify?`<button class="button auth-submit" data-portal="verify">${t('Complete demo verification')} →</button>`:''}<a class="auth-back" href="#login">${t('Back to sign in')}</a>`:`
         <form id="auth-form" data-mode="${mode}">
@@ -502,7 +502,7 @@
           ${!recover?`<div class="password-field">${authInput('Password','password','password','required minlength="8" maxlength="100" autocomplete="'+(register?'new-password':'current-password')+'" placeholder="'+t(register?'Create a demo password (8+ characters)':'Enter your password')+'"')}<button type="button" class="auth-password-toggle" data-portal="password" aria-controls="auth-password" aria-label="${t('Show password')}">${authPasswordIcon()}</button>${login?`<a class="auth-forgot" href="#forgot">${t('Forgot password?')}</a>`:''}</div>`:''}
           ${register?authInput('Phone number (optional)','phone','tel','maxlength="30" autocomplete="tel"'):''}
           ${register?`<label class="portal-checkbox"><input type="checkbox" name="terms" required><span>${t('I agree to the membership terms.')}</span></label><button class="text-button" type="button" data-portal="terms">${t('Read demo terms')} ↗</button>`:!recover?`<div class="auth-options"><label class="portal-checkbox"><input type="checkbox" name="remember"><span>${t('Keep me signed in')}</span></label></div>`:''}
-          <p id="auth-error" class="form-error" role="alert"></p><button class="button auth-submit" type="submit"><span data-auth-submit-label>${t(register?'Create account':recover?'Send reset link':'SIGN IN')}</span><span class="auth-submit-spinner" aria-hidden="true"></span>${login?'<svg class="auth-submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>':'<span class="auth-submit-arrow" aria-hidden="true">→</span>'}</button>
+          <p id="auth-error" class="form-error" role="alert"></p><button class="button auth-submit" type="submit"><span data-auth-submit-label>${t(register?'Create account':recover?'Send reset link':'Sign in')}</span><span class="auth-submit-spinner" aria-hidden="true"></span>${login?'<svg class="auth-submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>':'<span class="auth-submit-arrow" aria-hidden="true">→</span>'}</button>
         </form>
         ${recover?`<a class="auth-back" href="#login">${t('Back to sign in')}</a>`:`<div class="auth-bottom">${t(register?'Already a member?':'New to SYNC?')} <a href="#${register?'login':'register'}">${t(register?'Sign in':'Create an account')}</a></div>`}
         ${login?`<details class="demo-options"><summary><span>${t('Try a demo account')}</span><span class="auth-demo-tag">${t('Demo')}</span></summary><div class="demo-accounts"><p>${t('Simulated access. Do not enter a real password.')}</p><p>${t('Use a sample account to fill the form, then sign in.')}</p><div class="demo-account-list" aria-label="${t('Sample accounts')}">${accountRecords().filter(a=>['jamie',...sampleStaffAccounts.map(s=>s.id)].includes(a.id)&&a.status==='active'&&!a.credential).map(a=>[a.role==='member'?'Member':a.role==='admin'?'Owner / Admin':a.role==='frontdesk'?'Front desk':a.services.length===2?'Instructor · Both services':a.services[0]==='yoga'?'Instructor · Yoga':'Instructor · Contrast Therapy',a.email]).map(([role,email])=>`<button type="button" data-portal="demo-fill" data-email="${email}"><strong>${t(role)}</strong><span>${email}</span><span aria-hidden="true">↗</span></button>`).join('')}</div><p class="demo-password">${t('Shared demo password')}: <code>${demoPassword}</code></p></div></details>`:''}
@@ -621,7 +621,7 @@
       }catch{
         if(form.isConnected)error.textContent=t('Unable to sign in. Please try again.');
       }finally{
-        delete form.dataset.busy;form.removeAttribute('aria-busy');submit.disabled=false;if(submitLabel)submitLabel.textContent=t(mode==='register'?'Create account':'SIGN IN');
+        delete form.dataset.busy;form.removeAttribute('aria-busy');submit.disabled=false;if(submitLabel)submitLabel.textContent=t(mode==='register'?'Create account':'Sign in');
       }
       return;
     }
